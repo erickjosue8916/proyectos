@@ -43,7 +43,7 @@ Aplicacion que muestra en un ambiente grafico y compresible el comportamiento de
 - **Linux Mint**
 - **Qt Installer Framework**
 
-> Instalador disponible para windows [instalador](instalador/instaler.exe)
+> Instalador disponible para windows [instalador](instalador/installer.exe)
 
 > ## **Detalle**
 > ---
