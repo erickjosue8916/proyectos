@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Estructura de Arboles</Name>
+    <Version>1.0.0</Version>
+    <Title>Instalador Estructura Arboles</Title>
+    <Publisher>Qt-Project</Publisher>
+    <!-- Directory name is used in component.xml -->
+    <StartMenuDir>Arboles</StartMenuDir>
+    <TargetDir>@HomeDir@/Arboles</TargetDir>
+</Installer>

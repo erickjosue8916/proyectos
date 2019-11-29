@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane fx:id="panelAdmin" layoutX="143.0" layoutY="222.0" prefHeight="449.0" prefWidth="806.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="7.0" layoutY="-6.0" prefHeight="457.0" prefWidth="226.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="30.0">
+               <children>
+                  <HBox layoutY="-12.0" prefHeight="38.0" prefWidth="226.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label prefHeight="16.0" prefWidth="49.0" text="clave">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Separator visible="false" />
+                        <TextField fx:id="txtId" prefHeight="26.0" prefWidth="92.0" promptText="nombre">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Separator prefHeight="1.0" prefWidth="28.0" visible="false" />
+                        <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscar" prefHeight="26.0" prefWidth="76.0" text="Buscar">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="15.0" />
+                     </padding>
+                  </HBox>
+                  <VBox layoutY="38.0" prefHeight="446.0" prefWidth="226.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                        <Label text="Nombre:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtNombre" prefHeight="26.0" prefWidth="210.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Contraseña" />
+                        <PasswordField fx:id="txtContra" />
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin></Separator>
+                        <VBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="196.0">
+                           <children>
+                              <RadioButton fx:id="radHombre" mnemonicParsing="false" text="masculino">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sexo" />
+                                 </toggleGroup>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radMujer" mnemonicParsing="false" text="femenino" toggleGroup="$sexo" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </VBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox prefHeight="37.0" prefWidth="196.0">
+                           <children>
+                              <Label text="Cargo">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="3.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCargo" prefHeight="26.0" prefWidth="124.0" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="196.0">
+                           <children>
+                              <Label text="DUI">
+                                 <HBox.margin>
+                                    <Insets right="25.0" top="3.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtDui" prefHeight="26.0" prefWidth="124.0" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="196.0">
+                           <children>
+                              <Label text="NIT">
+                                 <HBox.margin>
+                                    <Insets right="25.0" top="3.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtNit" prefHeight="26.0" prefWidth="124.0" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <VBox prefHeight="46.0" prefWidth="196.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="182.0" text="Fecha de Nacimiento">
+                                 <VBox.margin>
+                                    <Insets bottom="3.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="txtNacimiento" editable="false" promptText="dd-mm-aaaa" showWeekNumbers="true" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="20.0" />
+                           </padding>
+                        </VBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <HBox prefHeight="37.0" prefWidth="196.0">
+                           <children>
+                              <Label text="Tel.">
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" left="3.0" right="25.0" top="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTel" prefHeight="26.0" prefWidth="124.0" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="196.0">
+                           <children>
+                              <Label prefHeight="16.0" prefWidth="45.0" text="Sueldo">
+                                 <HBox.margin>
+                                    <Insets right="7.0" top="4.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtSueldo" prefHeight="26.0" prefWidth="123.0" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></Separator>
+                        <AnchorPane prefHeight="50.0" prefWidth="196.0">
+                           <children>
+                              <Button fx:id="btnSave" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="btnDel" layoutX="104.0" layoutY="43.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="btnNuevo" layoutX="16.0" layoutY="39.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="70.0" text="Nuevo" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane fx:id="pDatos" layoutY="65.0" prefHeight="446.0" prefWidth="573.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+               <children>
+                  <VBox layoutX="77.0" prefHeight="326.0" prefWidth="573.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                     <children>
+                        <TableView fx:id="tablEmp" onMouseClicked="#select" prefHeight="411.0" prefWidth="523.0">
+                          <columns>
+                            <TableColumn fx:id="colId" prefWidth="49.0" text="id" />
+                            <TableColumn fx:id="colNombre" prefWidth="242.0" text="Nombre" />
+                              <TableColumn fx:id="colCargo" prefWidth="123.0" text="Cargo" />
+                              <TableColumn fx:id="colSueldo" prefWidth="117.0" text="Sueldo" />
+                          </columns>
+                        </TableView>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <padding>
+                              <Insets left="130.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <AnchorPane layoutX="14.0" layoutY="348.0" prefHeight="121.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" />
+                     </padding>
+                     <children>
+                        <TableView fx:id="tabFil" layoutX="69.0" layoutY="-60.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="colAFP" prefWidth="124.0" text="AFP" />
+                            <TableColumn fx:id="colISSS" prefWidth="97.0" text="ISSS" />
+                              <TableColumn fx:id="colRenta" prefWidth="106.0" text="RENTA" />
+                              <TableColumn fx:id="colSalario" prefWidth="195.0" text="SALARIO NETO" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Separator layoutX="218.0" layoutY="1.0" orientation="VERTICAL" prefHeight="536.0" prefWidth="15.0" />
+            <HBox layoutX="233.0" layoutY="1.0" prefHeight="69.0" prefWidth="573.0" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="btnEmp" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#btnEmpClicked" onMouseEntered="#inBtn" onMouseExited="#outBtn" opacity="0.27" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/editar.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="150.0" top="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="btnReg" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#btnRegClicked" onMouseEntered="#inBtn" onMouseExited="#outBtn" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/marcaciones.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="btnSalir" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#inicio" onMouseEntered="#inBtn" onMouseExited="#outBtn" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/exit.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </HBox>
+            <AnchorPane fx:id="pDatos1" layoutX="10.0" layoutY="75.0" prefHeight="446.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets bottom="25.0" left="25.0" right="25.0" />
+               </padding>
+               <children>
+                  <VBox layoutX="60.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="68.0" prefWidth="523.0">
+                           <children>
+                              <Label text="Fecha:">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="25.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <DatePicker fx:id="txtSearchFecha" editable="false" prefHeight="26.0" prefWidth="154.0" promptText="dd-mm-aaaa">
+                                 <HBox.margin>
+                                    <Insets top="20.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <Button fx:id="btnMarcasFecha" mnemonicParsing="false" onAction="#filtroMarcas" text="Buscar">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="25.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tabReg" prefHeight="352.0" prefWidth="523.0">
+                          <columns>
+                            <TableColumn fx:id="colTipo" prefWidth="160.0" text="TYPO" />
+                              <TableColumn fx:id="colFecha" prefWidth="159.0" text="FECHA" />
+                              <TableColumn fx:id="colHora" prefWidth="203.0" text="HORA" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelLogin" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane depthTest="DISABLE" layoutX="224.0" layoutY="39.0" prefHeight="409.0" prefWidth="335.0">
+               <children>
+                  <VBox layoutX="30.0" layoutY="24.0" prefHeight="385.0" prefWidth="276.0">
+                     <children>
+                        <ImageView fitHeight="113.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ic_account_circle_black_48dp.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="80.0" top="15.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="58.0" layoutY="8.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <TextField fx:id="txtLoginUser" promptText="Usuario">
+                                       <VBox.margin>
+                                          <Insets bottom="15.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <PasswordField fx:id="txtLoginPass" promptText="Contraseña" />
+                                    <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#login" text="Ingresar" textAlignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets left="75.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelEmp" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="163.0" layoutY="160.0" prefHeight="229.0" prefWidth="481.0">
+               <children>
+                  <VBox prefHeight="229.0" prefWidth="160.0">
+                     <children>
+                        <ImageView fx:id="btnMarcaLlegada" fitHeight="150.0" fitWidth="164.0" onMouseClicked="#marcaEntrada" onMouseEntered="#inBtn" onMouseExited="#outBtn" opacity="0.3" pickOnBounds="true" preserveRatio="true" translateX="5.0">
+                           <image>
+                              <Image url="@../img/llegada.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labLlegada" opacity="0.0" text="LLEGADA">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="229.0" prefWidth="160.0">
+                     <children>
+                        <ImageView fx:id="btnMarcaSalida" fitHeight="150.0" fitWidth="200.0" onDragEntered="#inBtn" onDragExited="#outBtn" onMouseClicked="#marcaSalida" onMouseEntered="#inBtn" onMouseExited="#outBtn" opacity="0.3" pickOnBounds="true" preserveRatio="true" translateX="5.0">
+                           <image>
+                              <Image url="@../img/salida.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labSalida" opacity="0.0" text="SALIDA">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="53.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="229.0" prefWidth="161.0">
+                     <children>
+                        <ImageView fx:id="btnSalir2" fitHeight="150.0" fitWidth="200.0" onDragEntered="#inBtn" onDragExited="#outBtn" onMouseClicked="#inicio" onMouseEntered="#inBtn" onMouseExited="#outBtn" opacity="0.3" pickOnBounds="true" preserveRatio="true" translateX="5.0">
+                           <image>
+                              <Image url="@../img/exit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labCerrar" opacity="0.0" text="CERRAR SESION">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label layoutX="214.0" layoutY="50.0" text="MARCACIONES">
+               <font>
+                  <Font name="System Bold" size="46.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets top="25.0" />
+   </padding>
+</AnchorPane>
