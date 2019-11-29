@@ -25,7 +25,7 @@ Aplicacion que permite realizar la gestion de empleados para recursos humanos, q
     - JavaFX
     - SQL
 - **JDK:** OpeJDK 11.0.2
-- **Conexion.java:** Clase para interactuar con bases de datos con java(proyecto propio) [leer mas](../GestionDB/README.md)
+- **Conexion.java:** Clase para interactuar con bases de datos con java(proyecto propio) [leer mas](https://github.com/erickjosue8916/proyectos/edit/master/java/GestionDB/README.md)
 - **Linux Mint**
 ***
 ## **Estructura del proyecto**
@@ -43,9 +43,10 @@ Aplicacion que permite realizar la gestion de empleados para recursos humanos, q
     - **Main.java:** clase principal que inicia la ejecucion
     - **sample.fxml:** contiene la vista de la aplicacion en un lenguaje de marcado
 
-> configura la base de datos con la que se trabajara en el archivo ***Main.java*** linea **14** segun se especifica en [Conexion.java](enlace)
+> configura la base de datos con la que se trabajara en el archivo ***Main.java linea 14*** segun se especifica en [Conexion.java](https://github.com/erickjosue8916/proyectos/edit/master/java/GestionDB/README.md)
 
-***
+> ## NOTA
+> Los datos de los impuestos fueron insertados en una tabla de la base de datos, en caso que se requiera hacer un cambio editar dicha tabla
 
 # **Capturas de pantalla**
 ## **Login**
@@ -55,17 +56,17 @@ Aplicacion que permite realizar la gestion de empleados para recursos humanos, q
     
   **Empleado**: 
  - usuario: su id en la base de datos
- - contraseña: contraseña asignada
+ - contraseña: contraseña asignada segun su registro
 
-
+![login](capturas/login.png)
 
 ## **Vista de Administrador**
 
 - ## Vista de Administrador - vista 1
+![login](capturas/admin1.png)
     
 - ## Vista de Administrador - vista 2
+![login](capturas/marcaciones.png)
 
-- ## Vista de empleado 
-
-> ## ***NOTAS***
-> - 
+## Vista de empleado 
+![login](capturas/empleado.png)

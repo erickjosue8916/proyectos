@@ -3,16 +3,17 @@ Autor: Erick Saravia <br>
 Ultima modificacion: 24 / 11 / 2019 <br>
 correo: ericksaravia16@gmail.com <br>
 version: 1.0.0
-***
+- - -
+
 > ## **Finalidad**
 > Crear una aplicaion que permita agregar registros en la base de datos proporcionada, mostrando todos los cambios en pantalla
 
 ## Descripcion
-***
+---
 La aplicacion gestiona las 5 tablas con la que cuenta la base de datos proporcionada, contando con un menu que permite al usuario seleccionar con cual tabla desea trabajar, el cual muestra la vista correspondiente a la opcion seleccionada
 
 ## **Herramientas** 
-***
+---
 - **IDE:** 
     - IntelliJ IDEA Ultimate 2019.2
 - **Gestor de base de datos:** 
@@ -25,7 +26,7 @@ La aplicacion gestiona las 5 tablas con la que cuenta la base de datos proporcio
 
 
 ## **Estructura del proyecto**
-***
+---
 ### **Paquetes:**
 - **Basics:** Clases para realizaroperaciones basicas
 - **com.company:** Paquete creado por defecto por el IDE
@@ -40,6 +41,8 @@ La aplicacion gestiona las 5 tablas con la que cuenta la base de datos proporcio
 Para todas las vistas se usa una estructura similar: formulario de ingreso de datos, boton de guardado, tabla que muestra los registros en la base de datos 
 ~~~
 
+![vista general](capturas/vista.png)
+
 ## **Notas**
-***
+---
 - Segun el requerimiento se solicitaba que la clave primaria fuera ingresada manualmente y no autogenerada

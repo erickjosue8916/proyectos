@@ -35,12 +35,12 @@ version: 1.0.0
 - El modelo debe contener los siguientes metodos estaticos (puede ser externo a la clase pero se debe contar con lasiguiente estructura)
     - Obtener los datos del modelo en forma de una lista de objetos
     ```java
-    public  static List&lt;Object> obtenerDatos() {        
+    public  static List<Object> obtenerDatos() {        
         List<Object> datos = new ArrayList<>()
          // agregar a la lista las propiedades del objeto, en el orden que se pasaran al constructor
          // en caso del uso de herencia, primero deben ser agregadas la    propiedades, de la clase, seguida de las originales   
 
-            return datos; <br>  </span>
+            return datos;
     } 
     ```
         
