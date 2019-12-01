@@ -41,7 +41,7 @@ Aplicacion que permite realizar la gestion de empleados para recursos humanos, q
 - **Sample:** contiene lo relacionado a la vista del proyecto y la clase principal
     - **Controller.java**: maneja la funciales de la aplicacion
     - **Main.java:** clase principal que inicia la ejecucion
-    - **sample.fxml:** contiene la vista de la aplicacion en un lenguaje de marcado
+    - **principal.fxml:** contiene la vista de la aplicacion en un lenguaje de marcado
 
 > configura la base de datos con la que se trabajara en el archivo ***Main.java linea 14*** segun se especifica en [Conexion.java](https://github.com/erickjosue8916/proyectos/edit/master/java/GestionDB/README.md)
 

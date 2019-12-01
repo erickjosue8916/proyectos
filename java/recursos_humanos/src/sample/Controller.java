@@ -1,4 +1,4 @@
-package sample;
+package principal;
 
 import basics.FormatoDatos;
 import basics.Validacion;
