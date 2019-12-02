@@ -1,7 +1,7 @@
 package sample;
 
+import basics.Validacion;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -86,7 +86,24 @@ public class Controller {
     }
     
     public void saveEmployee(ActionEvent actionEvent) {
+        if (valiadateForm()) {
+            System.out.println("Los datos son validos");
+        } else {
+            System.out.println("Los datos son invalidos");
+        }
+    }
 
+    private boolean valiadateForm() {
+        boolean code = Validacion.validar(txtCode.getText(), Validacion.numbers, true) && !txtCode.getText().isEmpty();
+        boolean name = Validacion.validar(txtName.getText(), Validacion.letters, true) && !txtName.getText().isEmpty();
+        boolean lastName = Validacion.validar(txtLastName.getText(), Validacion.letters, true) && !txtLastName.getText().isEmpty();
+        boolean telephone = Validacion.validar(txtTel.getText(), Validacion.numbers, true) && !txtTel.getText().isEmpty();
+        boolean age = Validacion.validar(txtAge.getText(), Validacion.numbers, true) && !txtAge.getText().isEmpty();
+        boolean salary = Validacion.validar(txtSalary.getText(), Validacion.numbers, true) && !txtSalary.getText().isEmpty();
+
+        return (
+                 ((code && name) && (lastName && telephone)) && (age && salary)
+                );
     }
 
     public void searchEmployee(MouseEvent mouseEvent) {
@@ -135,4 +152,6 @@ public class Controller {
     public void signOut(MouseEvent mouseEvent) {
         System.exit(0);
     }
+
+
 }
