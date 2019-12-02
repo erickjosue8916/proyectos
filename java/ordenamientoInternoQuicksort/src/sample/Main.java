@@ -1,5 +1,6 @@
 package sample;
 
+import db.ConnectDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        ConnectDB connect = ConnectDB.getInstance("jdbc:mysql://localhost/empresa", "erickdb", "", "MySql");
+
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("App");
         primaryStage.setResizable(false);

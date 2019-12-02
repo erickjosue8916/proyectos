@@ -1,12 +1,19 @@
 package sample;
 
 import basics.Validacion;
+import db.ConnectDB;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import models.Employee;
+import models.EmployeeTable;
+
+import java.util.List;
 
 public class Controller {
 
@@ -39,14 +46,65 @@ public class Controller {
     public TableColumn colLastName;
     public TableColumn colSalary;
     public TableColumn colAge;
-    public int opc;
 
+    private int opc;
+    private Employee auxEmployee;
+    private List<Employee> employeeList;
+    private List<List<Object>> employeeListObject;
+    private final ObservableList<Employee> tableEmployeeModel = FXCollections.observableArrayList();
+
+    private ConnectDB db;
+    private Alert dialog;
 
     public void initialize() {
+        dialog = new Alert(Alert.AlertType.ERROR);
+        db = ConnectDB.getInstance();
         opc = 1;
         btnPanel1.setOpacity(1.0);
-
         createComboBoxes();
+        configureTable();
+    }
+
+    private void showAlert(String mensaje, int tipo) {
+        if (tipo == 1) {
+            dialog.setTitle("ERROR!!");
+            dialog.setAlertType(Alert.AlertType.ERROR);
+        } else if (tipo == 2) {
+            dialog.setTitle("Operacion exitosa!!");
+            dialog.setAlertType(Alert.AlertType.INFORMATION);
+        }
+        dialog.setHeaderText(null);
+        dialog.setContentText(mensaje);
+        dialog.showAndWait();
+    }
+
+    private void configureTable() {
+
+        colId.setCellValueFactory(
+                new PropertyValueFactory<EmployeeTable, String>("id")
+        );
+
+        colCode.setCellValueFactory(
+                new PropertyValueFactory<EmployeeTable, String>("nombre")
+        );
+
+        colName.setCellValueFactory(
+                new PropertyValueFactory<EmployeeTable, String>("cargo")
+        );
+
+        colLastName.setCellValueFactory(
+                new PropertyValueFactory<EmployeeTable, String>("sueldo")
+        );
+
+        colSalary.setCellValueFactory(
+                new PropertyValueFactory<EmployeeTable, String>("sueldo")
+        );
+
+        colAge.setCellValueFactory(
+                new PropertyValueFactory<EmployeeTable, String>("sueldo")
+        );
+
+        tableEmployee.setItems(tableEmployeeModel);
     }
 
     private void createComboBoxes(){
@@ -55,6 +113,7 @@ public class Controller {
                 "Mantenimiento",
                 "Oficina"
         ));
+
         comboDepartment.setValue("Recursos Humanos");
 
         comboPosition.setItems(FXCollections.observableArrayList(
@@ -86,8 +145,20 @@ public class Controller {
     }
     
     public void saveEmployee(ActionEvent actionEvent) {
+        boolean inserted;
+
         if (valiadateForm()) {
-            System.out.println("Los datos son validos");
+            auxEmployee = new Employee( 1, txtCode.getText(), txtName.getText(), txtLastName.getText(),
+                    Integer.parseInt(txtAge.getText()), txtTel.getText(), Integer.parseInt(txtSalary.getText()),
+                     "" + comboPosition.getValue(), txtCountry.getText(), "" + comboDepartment.getValue()
+            );
+
+            inserted = db.insertar("empleados", "models.Employee", auxEmployee.getData(), 1);
+            if (inserted) {
+                showAlert("Los datos del empleado se guardaron en la base de datos", 2);
+            } else {
+                showAlert("ERROR!! Los datos no se pudieron guardar", 2);
+            }
         } else {
             System.out.println("Los datos son invalidos");
         }
