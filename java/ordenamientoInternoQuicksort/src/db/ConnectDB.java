@@ -115,7 +115,7 @@ public class ConnectDB {
         }
     }
 
-    public void eliminar (String tabla, String clave, String valor, boolean unico){
+    public boolean eliminar (String tabla, String clave, String valor, boolean unico){
         this.sql = "DELETE FROM " + tabla + " WHERE " + clave; // se crea la consulta
         this.sql += (unico) ? " = ?;" : " LIKE %?%;"; // si se eliminara pos clave primaria o no
         try {
@@ -126,8 +126,9 @@ public class ConnectDB {
                 pst.setString(1, valor);
             }
             pst.executeUpdate();
+            return true;
         } catch (SQLException e) {
-            System.out.println("Error al eliminar los datos");
+            return false;
         }
     }
 

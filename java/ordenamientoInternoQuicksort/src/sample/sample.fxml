@@ -54,25 +54,25 @@
                <children>
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
                      <children>
-                        <Label layoutY="15.0" text="codigo" />
+                        <Label layoutY="15.0" text="Codigo" />
                         <TextField fx:id="txtCode" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
                      <children>
-                        <Label layoutY="15.0" text="apellido" />
+                        <Label layoutY="15.0" text="Nombre" />
+                        <TextField fx:id="txtName" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="46.0" prefWidth="189.0">
+                     <children>
+                        <Label layoutY="15.0" text="Apellido" />
                         <TextField fx:id="txtLastName" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
                      <children>
-                        <Label layoutY="15.0" text="telefono" />
-                        <TextField fx:id="txtTel" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="46.0" prefWidth="189.0">
-                     <children>
-                        <Label layoutY="15.0" text="puesto" />
+                        <Label layoutY="15.0" text="Puesto" />
                         <ComboBox fx:id="comboPosition" layoutX="53.0" layoutY="10.0" prefHeight="26.0" prefWidth="129.0" />
                      </children>
                   </AnchorPane>
@@ -105,8 +105,8 @@
                <children>
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
                      <children>
-                        <Label layoutY="15.0" text="nombre" />
-                        <TextField fx:id="txtName" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
+                        <Label layoutY="15.0" text="Telfono" />
+                        <TextField fx:id="txtTel" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
@@ -124,12 +124,12 @@
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
                      <children>
                         <Label layoutY="15.0" text="pais" />
-                        <TextField fx:id="txtCountry" layoutX="61.0" layoutY="10.0" prefHeight="26.0" prefWidth="120.0" />
+                        <ComboBox fx:id="comboCountry" layoutX="31.0" layoutY="10.0" prefWidth="150.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="46.0" prefWidth="189.0">
                      <children>
-                        <Button fx:id="btnSave" layoutX="74.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveEmployee" text="Guardar" />
+                        <Button fx:id="btnSave" layoutX="58.0" layoutY="12.0" mnemonicParsing="false" onAction="#saveEmployee" prefHeight="46.0" prefWidth="120.0" text="Guardar" textFill="#222121" />
                      </children>
                   </AnchorPane>
                </children></VBox>
@@ -141,12 +141,12 @@
                <children>
                   <AnchorPane layoutX="-9.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-9.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TextField fx:id="txtSearch" layoutX="15.0" layoutY="14.0" prefHeight="26.0" prefWidth="171.0" />
+                        <TextField fx:id="txtSearch" layoutX="15.0" layoutY="14.0" onKeyReleased="#searchEmployee" prefHeight="26.0" prefWidth="171.0" />
                         <Label layoutX="15.0" layoutY="49.0" text="Buscar:" />
-                        <ComboBox fx:id="comboSearch" layoutX="68.0" layoutY="44.0" prefHeight="26.0" prefWidth="120.0" />
+                        <ComboBox fx:id="comboSearch" layoutX="68.0" layoutY="44.0" onAction="#searchEmployee" prefHeight="26.0" prefWidth="120.0" />
                      </children>
                   </AnchorPane>
-                  <ImageView fx:id="btnSearch" fitHeight="150.0" fitWidth="24.0" layoutX="184.0" layoutY="14.0" onMouseClicked="#searchEmployee" onMouseEntered="#iconIn" onMouseExited="#iconOut" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="btnSearch" fitHeight="150.0" fitWidth="24.0" layoutX="184.0" layoutY="14.0" onMouseClicked="#showData" onMouseEntered="#iconIn" onMouseExited="#iconOut" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/seach.png" />
                      </image>
@@ -154,7 +154,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <ImageView fx:id="btnDelete" fitHeight="150.0" fitWidth="24.0" layoutX="184.0" layoutY="44.0" onMouseEntered="#iconIn" onMouseExited="#iconOut" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="btnDelete" fitHeight="150.0" fitWidth="24.0" layoutX="184.0" layoutY="44.0" onMouseClicked="#delete" onMouseEntered="#iconIn" onMouseExited="#iconOut" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/delete.png" />
                      </image>
@@ -162,24 +162,24 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
-                  <Separator layoutX="218.0" layoutY="8.0" orientation="VERTICAL" prefHeight="58.0" prefWidth="6.0" />
-                  <Label layoutX="243.0" layoutY="14.0" text="Ordenar por:" />
-                  <ComboBox fx:id="comboField" layoutX="244.0" layoutY="34.0" onAction="#changeSort" prefHeight="26.0" prefWidth="142.0" />
-                  <Separator layoutX="396.0" layoutY="9.0" orientation="VERTICAL" prefHeight="58.0" prefWidth="6.0" />
+                  <Separator layoutX="218.0" layoutY="9.0" orientation="VERTICAL" prefHeight="58.0" prefWidth="6.0" />
+                  <Label layoutX="234.0" layoutY="14.0" text="Ordenar por:" />
+                  <ComboBox fx:id="comboField" layoutX="234.0" layoutY="34.0" onAction="#changeSort" prefHeight="26.0" prefWidth="142.0" />
+                  <Separator layoutX="389.0" layoutY="10.0" orientation="VERTICAL" prefHeight="58.0" prefWidth="6.0" />
                   <Label layoutX="409.0" layoutY="13.0" text="Tipo de orden:" />
                   <ComboBox fx:id="comboType" layoutX="410.0" layoutY="33.0" onAction="#sort" prefHeight="26.0" prefWidth="142.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="283.0" prefWidth="577.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <TableView fx:id="tableEmployee" layoutX="49.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tableEmployee" layoutX="49.0" layoutY="14.0" onMouseClicked="#selectEmployee" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="colId" prefWidth="47.0" text="Id" />
                       <TableColumn fx:id="colCode" prefWidth="90.0" text="Codigo" />
                         <TableColumn fx:id="colName" prefWidth="111.0" text="Nombre" />
                         <TableColumn fx:id="colLastName" prefWidth="112.0" text="Apellido" />
                         <TableColumn fx:id="colAge" prefWidth="116.0" text="Edad" />
-                        <TableColumn fx:id="colSalary" prefWidth="100.0" text="Salario" />
+                        <TableColumn fx:id="colSalary" text="Salario" />
                     </columns>
                   </TableView>
                </children>
