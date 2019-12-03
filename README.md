@@ -18,3 +18,7 @@ Dada una base de datos, se creo la interfaz que permitiera ingresar los datos en
 ---
 ## Proyecto personal Conexion.java
 Una clase que permita simplificar las gestiones con las bases de datos de tal forma que sea esta la que se encargue de la mayor parte posible de estas tareas. En estado muy inicial, pero permite los suficiente para un CRUD basico [ver mas](java/GestionDB/README.md)
+
+---
+### Proyecto final materia estructura de datos 
+Un programa que permita gestionar los datos de los empleados de una empresa, el cual permita ingresar nuevos empleados y mostrar los registros, asi como realizar busquedas por nombre, apellido y ordenmar los datos en base a los campos de id, sueldoBase y edad. Los ordenamientos son en memoria interna utilizando el algoritmo de ordenacion QuickSort
