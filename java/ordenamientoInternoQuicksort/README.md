@@ -1,4 +1,4 @@
-# **APP RECURSOS HUMANOS**
+# **Ordenamiento interno**
 
 Autor: Erick Saravia <br>
 Ultima modificacion: 02 / 12 / 2019 <br>
@@ -29,8 +29,9 @@ version: 1.0.0
 - **db:** Se maneja todo lo relacionado con las conexiones con la base de datos
 - **img:** Contiene los iconos que se utilizan en la aplicacion
 - **models:** Modelos utilizados 
-    - **Vista (tablas en pantalla):** solo tienen el nombre de la entidad
-    - **Datos (tablas en la Base de datos):**  precede al nombre de la clase el prefijo"Modelo"
+    - **Empleado:** Modelo para la entidad del empleado 
+    - **Tabla empleado:**  Modelo empleado en la tabla de empleados (necesario segun la estructura que sigue su uso)
+    - **Datos empleado:** Gestiona las operaciones que se realizaran con un empleado (metodos estaticos relacionados al este tipo datos como la ordenacion)
 - **Sample:** contiene lo relacionado a la vista del proyecto y la clase principal
     - **Controller.java**: maneja la funciales de la aplicacion
     - **Main.java:** clase principal que inicia la ejecucion
